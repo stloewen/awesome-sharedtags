@@ -158,8 +158,9 @@ end
 
 --- View the specified tag on the specified screen.
 -- @param tag The only tag to view.
--- @tparam[opt=awful.screen.focused()] number screen The screen to view the tag on.
+-- @tparam[opt=tag.screen] number screen The screen to view the tag on.
 function sharedtags.viewonly(tag, screen)
+    screen = screen or tag.screen
     sharedtags.movetag(tag, screen)
     tag:view_only()
 end
